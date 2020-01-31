@@ -2,7 +2,6 @@ const dotenv = require('dotenv');
 
 // Set the NODE_ENV to 'development' by default
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-
 if (process.env.NODE_ENV === 'development') {
   dotenv.config();
 }
@@ -45,15 +44,6 @@ module.exports = {
   },
 
   api: {
-    prefix: '/lms/chat',
-  },
-
-  /**
-   * Chat specific configs
-   */
-  chat: {
-    API_REQUEST_URL: process.env.SENDBIRD_API_REQUEST_URL,
-    APP_ID: process.env.SENDBIRD_APP_ID,
-    MASTER_API_TOKEN: process.env.SENDBIRD_MASTER_API_TOKEN,
+    prefix: '',
   },
 };

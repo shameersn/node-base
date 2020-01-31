@@ -1,0 +1,10 @@
+const path = require('path');
+// This file used for the first time only to create migrations related folders and files
+// database.js is not required as per our models index.js file implementation
+
+module.exports = {
+  'config': path.resolve('src/dataSource/common/config', 'database.js'),
+  'models-path': path.resolve('src/dataSource/common/', 'models'),
+  'seeders-path': path.resolve('src/dataSource/common/', 'seeders'),
+  'migrations-path': path.resolve('src/dataSource/common/', 'migrations')
+};

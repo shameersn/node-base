@@ -7,6 +7,7 @@ const {
   developmentErrors,
   productionErrors,
 } = require('../errorHandlers');
+const i18n = require('./i18n');
 
 module.exports = app => {
   // Enable Cross Origin Resource Sharing to all origins by default
@@ -14,6 +15,9 @@ module.exports = app => {
 
   // Middleware that transforms the raw string of req.body into json
   app.use(bodyParser.json());
+
+  // Init i18n
+  i18n(app);
 
   // Load API routes
   app.use(api.prefix, routes);

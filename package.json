@@ -4,9 +4,16 @@
   "description": "Node base repo",
   "main": "src/app.js",
   "scripts": {
-    "start": "nodemon",
+    "start:dev": "nodemon",
+    "start": "node ./src/app.js",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "common-db:migrate": "sequelize --options-path ./.sequelizerc-common db:migrate",
+    "common-db:migrate:undo": "sequelize --options-path ./.sequelizerc-common db:migrate:undo",
+    "common-db:seed:all": "sequelize --options-path ./.sequelizerc-common db:seed:all",
+    "tenant-db:migrate": "sequelize --options-path ./.sequelizerc-tenant db:migrate",
+    "tenant-db:migrate:undo": "sequelize --options-path ./.sequelizerc-tenant db:migrate:undo",
+    "tenant-db:seed:all": "sequelize --options-path ./.sequelizerc-tenant db:seed:all"
   },
   "keywords": [
     "nodejs"
@@ -26,14 +33,21 @@
     "eslint-plugin-react": "^7.18.0",
     "eslint-plugin-react-hooks": "^1.7.0",
     "nodemon": "^2.0.2",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "sequelize-cli": "^5.5.1"
   },
   "dependencies": {
     "@hapi/joi": "^17.1.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "http-status-codes": "^1.4.0",
+    "i18next": "^19.1.0",
+    "i18next-express-middleware": "^1.9.1",
+    "i18next-node-fs-backend": "^2.1.3",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.3",
     "winston": "^3.2.1"
   }
 }

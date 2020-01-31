@@ -1,6 +1,8 @@
 /* File is copied from wesbos - learn node git hub repo and modified */
 const HttpStatus = require('http-status-codes');
 const {failure} = require('../helpers/response');
+const {LANGUAGE_KEYS} = require('../helpers/constants');
+
 /**
  * Custom Error Handler class to throw errors with custom status code
  */
@@ -30,7 +32,7 @@ const catchErrors = fn =>
   If we hit a route that is not found, we mark it as 404 and pass it along to the next error handler to display
 */
 const notFound = (req, res, next) => {
-  const err = new Error('Not found');
+  const err = new Error(req.t(LANGUAGE_KEYS.COMMON_NOT_FOUND));
   err.status = HttpStatus.NOT_FOUND;
 
   next(err, req, res);

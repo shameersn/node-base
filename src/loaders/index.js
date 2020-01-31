@@ -1,13 +1,8 @@
-const {sequelize} = require('../models');
 const {Logger} = require('./logger');
 const expressLoader = require('./express');
 
 module.exports = async app => {
   try {
-    Logger.info('Sequelize sync started');
-    await sequelize.sync();
-    Logger.info('Sequelize sync completed');
-
     Logger.info('Express initialization started');
     expressLoader(app);
     Logger.info('Express initialization completed');
