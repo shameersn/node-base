@@ -25,8 +25,7 @@ module.exports = (req, res, next) => {
   const {error} = schema.validate(req.body);
 
   if (error) {
-    const {message} = error.details[0];
-    throw new ErrorHandler(HttpStatus.BAD_REQUEST, message);
+    throw new ErrorHandler(HttpStatus.BAD_REQUEST, error.details);
   }
 
   next();

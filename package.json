@@ -8,6 +8,7 @@
     "start": "node ./src/app.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "create-migrate-skeleton": "npx sequelize-cli migration:generate --options-path ./.sequelizerc-$DB --name migration-$ACTION",
     "common-db:migrate": "sequelize --options-path ./.sequelizerc-common db:migrate",
     "common-db:migrate:undo": "sequelize --options-path ./.sequelizerc-common db:migrate:undo",
     "common-db:seed:all": "sequelize --options-path ./.sequelizerc-common db:seed:all",

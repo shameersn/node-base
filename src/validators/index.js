@@ -1,4 +1,4 @@
-const channelValidator = require('./channel.validator');
+const channelValidator = require('./channelValidator');
 
 module.exports = {
   channelValidator,
